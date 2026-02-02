@@ -1,11 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>EVOLVAI 2K26</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVOLVAI 2K26 | JOY UNIVERSITY</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0b1020, #000);
+  color: #ffffff;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero img {
+  width: 220px;
+  filter: drop-shadow(0 0 20px #5efcff);
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin: 20px 0 10px;
+  background: linear-gradient(90deg, #5efcff, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.time-box {
+  background: rgba(255,255,255,0.05);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(94,252,255,0.3);
+}
+
+.time-box h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #5efcff;
+}
+
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #c77dff;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(199,125,255,0.4);
+}
+
+.register {
+  text-align: center;
+}
+
+.register a {
+  text-decoration: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #5efcff, #c77dff);
+  color: #000;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+</style>
 </head>
-<body style="font-family: Arial; text-align:center; margin-top:100px;">
+
+<body>
+
+<div class="hero">
+  <img src="logo.png" alt="EVOLVAI Logo">
   <h1>EVOLVAI 2K26</h1>
-  <p>JOY UNIVERSITY Technical & Non-Technical Event</p>
-  <p>Website coming soon 🚀</p>
+  <p>Empower • Elevate • Evolve</p>
+  <p>JOY UNIVERSITY | March 2026</p>
+
+  <div class="timer">
+    <div class="time-box">
+      <h2 id="days">00</h2>
+      <small>Days</small>
+    </div>
+    <div class="time-box">
+      <h2 id="hours">00</h2>
+      <small>Hours</small>
+    </div>
+    <div class="time-box">
+      <h2 id="minutes">00</h2>
+      <small>Minutes</small>
+    </div>
+    <div class="time-box">
+      <h2 id="seconds">00</h2>
+      <small>Seconds</small>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>About EVOLVAI</h2>
+  <p style="text-align:center;">
+    EVOLVAI 2K26 is a national-level technical and non-technical fest
+    organized by JOY UNIVERSITY, celebrating innovation, intelligence,
+    creativity, and competitive spirit.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Event Highlights</h2>
+  <div class="events">
+    <div class="card">Technical Events</div>
+    <div class="card">Non-Technical Events</div>
+    <div class="card">Gaming Tournaments</div>
+    <div class="card">Debates & Challenges</div>
+  </div>
+</div>
+
+<div class="section register">
+  <h2>Ready to Evolve?</h2>
+  <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank">Register Now</a>
+</div>
+
+<footer>
+  © 2026 EVOLVAI | JOY UNIVERSITY
+</footer>
+
+<script>
+const eventDate = new Date("March 20, 2026 10:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = eventDate - now;
+
+  document.getElementById("days").innerText =
+    Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText =
+    Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("minutes").innerText =
+    Math.floor((diff / (1000 * 60)) % 60);
+  document.getElementById("seconds").innerText =
+    Math.floor((diff / 1000) % 60);
+}, 1000);
+</script>
+
 </body>
 </html>
+
