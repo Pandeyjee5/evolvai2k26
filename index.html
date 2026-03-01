@@ -107,6 +107,25 @@ footer {
   font-size: 0.9rem;
   opacity: 0.6;
 }
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Prevents the image from stretching */
+  border: 3px solid #5efcff; /* Adds a cyan border */
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px rgba(94, 252, 255, 0.4); /* Adds a subtle glow */
+}
+
+.profile-card {
+  text-align: center; /* Centers the image and text inside the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 </style>
 <style>
   html {
@@ -208,10 +227,8 @@ body {
   <p>JOY UNIVERSITY | March 2026</p>
 
   <div class="top-buttons">
-  <a href="#technical" class="btn">Technical</a>
-  <a href="#nontechnical" class="btn">Non-Technical</a>
-  <a href="#gaming" class="btn">Gaming</a>
-  <a href="#debate" class="btn">Debates & Challenges</a>
+  <a href="#technical" class="btn">Technical Events</a>
+  <a href="#nontechnical" class="btn">Non-Technical Events</a>
 </div>
 
 
@@ -252,27 +269,49 @@ body {
 
 <div class="section">
   <h2>Know Your Chief Guest</h2>
-  <div class="card">
-    <h3>Mr. Dinesh Kumar</h3>
-    <p>B.E, M.S (USA)</p>
-    <p>Founder & CEO, READ Automation, Chennai</p>
+  
+  <div style="display: flex; justify-content: center;">
+    <div class="card profile-card" style="max-width: 350px; width: 100%;">
+      <img src="chief-guest.jpg" alt="Mr. Dinesh Kumar" class="profile-img">
+      <h3>Mr. Dinesh Kumar</h3>
+      <p>B.E, M.S (USA)</p>
+      <p>Founder & CEO, READ Automation, Chennai</p>
+    </div>
   </div>
 
   <h2 style="margin-top:50px;">Know Your Judges</h2>
 
   <div class="events">
-    <div class="card">
+    <div class="card profile-card">
+      <img src="judge-1.jpg" alt="Mr. Rajadurai Samuel" class="profile-img">
       <h3>Mr. Rajadurai Samuel</h3>
       <p>B.E, M.B.A</p>
       <p>Area: CISCO Security</p>
       <p>Technical Specialist, HCL Technologies, Chennai</p>
     </div>
 
-    <div class="card">
+    <div class="card profile-card">
+      <img src="judge-2.jpg" alt="Mr. Selvinth Joshua" class="profile-img">
       <h3>Mr. Selvinth Joshua</h3>
       <p>M.Tech</p>
       <p>Area: Database</p>
       <p>Database Architect, Hexaware Technologies, Chennai</p>
+    </div>
+
+    <div class="card profile-card">
+      <img src="judge-3.jpg" alt="Mr. Jedidah Jeyaraj" class="profile-img">
+      <h3>Mr. Jedidah Jeyaraj</h3>
+      <p>M.Tech</p>
+      <p>Area: Full Stack </p>
+      <p>Full Stack Java Developer, Citi Bank, Chennai</p>
+    </div>
+
+    <div class="card profile-card">
+      <img src="judge-4.jpg" alt="Mr. Sivaprakash Raman" class="profile-img">
+      <h3>Mr. Sivaprakash Raman</h3>
+      <p>       </p>
+      <p>Area: Cloude & Devops</p>
+      <p>Transformation Lead - Cloud & Devops, Coimbatore</p>
     </div>
   </div>
 </div>
@@ -284,14 +323,15 @@ body {
   <div class="events">
 
     <!-- Technical -->
-    <div class="card">
+    <div class="card" id="technical">
       <h3 style="color:#c77dff;">Technical Events</h3>
 
       <details class="event-box">
         <summary>Pilot's Briefing</summary>
         <ul>
-          <li>Max 2 participants</li>
-          <li>5–7 minutes presentation</li>
+          <li>Individual / Max 3 members</li>
+          <li>Abstract: 1 week before | PPT: 3 days before</li>
+          <li>8–10 min presentation + Q&A</li>
           <li>No plagiarism</li>
         </ul>
       </details>
@@ -299,110 +339,114 @@ body {
       <details class="event-box">
         <summary>Aero IQ</summary>
         <ul>
-          <li>Technical Quiz</li>
-          <li>Team of 2</li>
+          <li>2 members per team</li>
+          <li>Cross-department allowed</li>
+          <li>Topics: Technical awareness & current trends</li>
         </ul>
       </details>
 
       <details class="event-box">
         <summary>AI Flight Deck</summary>
         <ul>
-          <li>Prompt Engineering Challenge</li>
+          <li>UG/PG | Max 3 members</li>
+          <li>Theme: “EvolvAI: Designing Tomorrow's Mind”</li>
+          <li>A0 size poster (bring on event day)</li>
+          <li>5 min presentation + 2 min Q&A</li>
+        </ul>
+      </details>
+
+      <details class="event-box">
+        <summary>THE HIDDEN FLIGHT</summary>
+        <ul>
+          <li>Cryptography Puzzle Hunt</li>
+          <li>Individual event</li>
+          <li>3 Rounds: Cipher Trials → Cipher Hunt → Rapid Fire Final</li>
         </ul>
       </details>
 
       <details class="event-box">
         <summary>Sky Sites</summary>
         <ul>
-          <li>Webpage Designing Competition</li>
+          <li>Individual event | 90 minutes</li>
+          <li>Theme given on the spot (choose 1 of 3)</li>
+          <li>Use provided system only (no personal laptops)</li>
+          <li>No templates / plagiarism</li>
+          <li>Website must run locally</li>
+          <li>Judged on creativity, UI/UX, responsiveness & code quality</li>
         </ul>
       </details>
     </div>
 
     <!-- Non Technical -->
-    <div class="card">
+    <div class="card" id="nontechnical">
       <h3 style="color:#c77dff;">Non-Technical Events</h3>
 
       <details class="event-box">
         <summary>Lens on the Sky</summary>
         <ul>
-          <li>Creative interpretation</li>
+          <li>March 28, 2026 | 10 AM – 2 PM</li>
+          <li>DSLR / Smartphone allowed</li>
+          <li>No AI editing</li>
+          <li>Photos must be taken on event day (metadata checked)</li>
+          <li>Campus-only photography</li>
         </ul>
       </details>
 
       <details class="event-box">
         <summary>Mystery in the Clouds</summary>
         <ul>
-          <li>Logical reasoning challenge</li>
+          <li>3–5 members per team</li>
+          <li>Solve clues in order (no skipping)</li>
+          <li>No unfair means / clue sharing</li>
+          <li>First team to finish wins</li>
         </ul>
       </details>
 
       <details class="event-box">
-        <summary>Mind Marathon</summary>
+        <summary>AERO MIND CHALLENGE</summary>
         <ul>
-          <li>Individual quiz</li>
-        </ul>
-      </details>
-
-      <details class="event-box">
-        <summary>Battle of Arguments</summary>
-        <ul>
-          <li>2 participants per team</li>
+          <li>3 members per team (No individuals)</li>
+          <li>3 rounds</li>
+          <li>No electronic devices</li>
+          <li>ID card compulsory</li>
         </ul>
       </details>
     </div>
-
-    <!-- Gaming -->
-    <div class="card">
-      <h3 style="color:#c77dff;">Gaming Events</h3>
-
-      <details class="event-box">
-        <summary>University Valorant League</summary>
-        <ul>
-          <li>Team of 5</li>
-        </ul>
-      </details>
-
-      <details class="event-box">
-        <summary>Free Fire Showdown</summary>
-        <ul>
-          <li>Squad format</li>
-        </ul>
-      </details>
-
-      <details class="event-box">
-        <summary>Checkmate Arena</summary>
-        <ul>
-          <li>Individual chess tournament</li>
-        </ul>
-      </details>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="section register">
+  </div> </div> <div class="section register">
   <h2>Ready to Evolve?</h2>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScaq0XCiO1YWm-uKF_12rflUzzRpbx-qFj2eeYBdngmfmdjVw/viewform?usp=sharing&ouid=113314826613073919219" target="_blank">Register Now</a>
 </div>
 
 <div class="section">
   <h2>Contact & Coordination</h2>
-  <div class="card" style="text-align:center;">
-    <h3>Shivam Pandey</h3>
-    <p>Event Coordinator</p>
-    <p>Email: pandey.jee6325@gmail.com</p>
+  
+  <div class="events">
+    <div class="card" style="text-align:center;">
+      <h3>G. Shashindra</h3>
+      <p>Event Coordinator</p>
+      <p>Phone: +91 7981880223</p>
+    </div>
+
+    <div class="card" style="text-align:center;">
+      <h3>Hana</h3>
+      <p>Event Coordinator</p>
+      <p>Phone: +91 7845190613</p>
+    </div>
+
+    <div class="card" style="text-align:center;">
+      <h3>Shivam Pandey</h3>
+      <p>Event Coordinator</p>
+      <p>Phone: +91 9060155621</p>
+    </div>
   </div>
 </div>
-
 
 <footer>
   © 2026 EVOLVAI | JOY UNIVERSITY
 </footer>
 
 <script>
-const eventDate = new Date("March 20, 2026 10:00:00").getTime();
+const eventDate = new Date("March 28, 2026 10:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
@@ -482,4 +526,3 @@ animate();
 
 </body>
 </html>
-
